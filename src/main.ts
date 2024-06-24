@@ -19,22 +19,16 @@ import { App } from '@capacitor/app';
 
 CapacitorUpdater.notifyAppReady();
 
-let data: any ;
-let appInfo: any = {};
-
-App.getInfo().then((info) => {
-  appInfo = info;
-});
+let data: any
 
 App.addListener('appStateChange', async (state) => {
-  alert(JSON.stringify(state));
   const update = await fetchUpdates();
 
   if (state.isActive) {
     data = await CapacitorUpdater.download(update);
   }
 
-  if (!state.isActive && appInfo.version !== update.version) {
+  if (!state.isActive) {
     try {
       await CapacitorUpdater.set(data);
     } catch (err) {
@@ -44,7 +38,7 @@ App.addListener('appStateChange', async (state) => {
 });
 
 async function fetchUpdates() {
-  const response = await fetch("https://raw.githubusercontent.com/oliverdjbrown/capgo-test/main/updates.json");
+  const response = await fetch("https://raw.githubusercontent.com/test/capgo-test/main/updates.json");
 
   const data = await response.json();
 

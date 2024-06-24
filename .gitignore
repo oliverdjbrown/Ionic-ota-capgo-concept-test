@@ -11,6 +11,9 @@ $RECYCLE.BIN/
 
 *.log
 log.txt
+.capgo_key
+.capgo_key.pub
+
 
 
 /.sourcemaps
