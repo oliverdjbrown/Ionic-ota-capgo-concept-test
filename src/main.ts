@@ -38,7 +38,7 @@ App.addListener('appStateChange', async (state) => {
 });
 
 async function fetchUpdates() {
-  const response = await fetch("https://raw.githubusercontent.com/test/capgo-test/main/updates.json");
+  const response = await fetch("https://raw.githubusercontent.com/test/capgo-concept-test/main/updates.json");
 
   const data = await response.json();
 
