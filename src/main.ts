@@ -1,4 +1,4 @@
-import { enableProdMode } from '@angular/core';
+import { enableProdMode, inject } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import {
   RouteReuseStrategy,
@@ -10,40 +10,33 @@ import {
   IonicRouteStrategy,
   provideIonicAngular,
 } from '@ionic/angular/standalone';
-
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
 import { CapacitorUpdater } from '@capgo/capacitor-updater';
 import { App } from '@capacitor/app';
+import { UpdateAppService } from './app/services/update-app.service';
 
 CapacitorUpdater.notifyAppReady();
 
-let data: any
+let update: any
 
 App.addListener('appStateChange', async (state) => {
-  const update = await fetchUpdates();
+  /*
+  const updateService = inject(UpdateAppService);
+
+  const availableUpdate = await updateService.fetchVersions();
 
   if (state.isActive) {
-    data = await CapacitorUpdater.download(update);
+    update = updateService.downloadUpdate(availableUpdate);
   }
 
   if (!state.isActive) {
-    try {
-      await CapacitorUpdater.set(data);
-    } catch (err) {
-      console.error(err);
-    }
+    updateService.setUpdate(update);
   }
+    */
 });
 
-async function fetchUpdates() {
-  const response = await fetch("https://raw.githubusercontent.com/test/capgo-concept-test/main/updates.json");
-
-  const data = await response.json();
-
-  return data;
-}
 
 if (environment.production) {
   enableProdMode();

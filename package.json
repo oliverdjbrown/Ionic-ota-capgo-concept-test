@@ -1,6 +1,6 @@
 {
   "name": "capgo-concept-test",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
@@ -35,6 +35,7 @@
     "@ionic/angular": "^8.0.0",
     "ionicons": "^7.2.1",
     "rxjs": "~7.8.0",
+    "semver": "^7.6.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
   },
@@ -51,6 +52,7 @@
     "@capacitor/cli": "6.1.0",
     "@ionic/angular-toolkit": "^11.0.1",
     "@types/jasmine": "~5.1.0",
+    "@types/node": "^20.14.9",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.57.0",
