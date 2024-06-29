@@ -4,7 +4,7 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
-  IonButton,
+  IonButton
 } from '@ionic/angular/standalone';
 import { FormComponent } from '../form/form.component';
 import { UpdateAppService } from '../services/update-app.service';
@@ -21,7 +21,7 @@ import { Router } from '@angular/router';
     IonTitle,
     IonContent,
     FormComponent,
-    IonButton,
+    IonButton
   ],
 })
 export class HomePage {
@@ -29,6 +29,8 @@ export class HomePage {
     private updateAppService: UpdateAppService,
     private router: Router
   ) {}
+
+  alertButtons = ['Action'];
 
   async certificateFlow(flowName: string) {
     const availableUpdate =

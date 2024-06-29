@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CapacitorUpdater } from '@capgo/capacitor-updater';
-import { AlertController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular/standalone';
 import * as SemVer from 'semver';
 
 @Injectable({
