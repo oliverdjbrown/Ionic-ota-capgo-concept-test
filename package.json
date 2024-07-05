@@ -13,6 +13,7 @@
     "upload:prod": "npx @capgo/cli@latest bundle upload -c production",
     "upload:dev": "npx @capgo/cli@latest bundle upload -c development",
     "generate": "ng build && npx @capgo/cli/latest bundle zip",
+    "encryption": "npx @capgo/cli bundle encrypt concept.test2_0.0.40.zip",
     "debug": "npx @capgo/cli app debug"
   },
   "private": true,
