@@ -25,7 +25,7 @@ export class UpdateAppService {
   }
 
   async validateIfNewVersionIsAvailable(flowVersion?: string): Promise<boolean> {
-    const currentAppVersion = '0.0.39';
+    const currentAppVersion = '0.0.40';
 
     const serverVersions: any = await this.fetchVersions();
 
